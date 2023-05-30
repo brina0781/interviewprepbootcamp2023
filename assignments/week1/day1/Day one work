@@ -1,0 +1,43 @@
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+                
+        unordered_set<int>hashset;//intialize the hash set
+        for(int i =0 ; i < nums.size(); i++)
+        {
+            hashset.insert(nums[i]);
+        }
+        
+        for(auto it = hashset.begin(); it != hashset.end(); ++it)
+        {
+            if(hashset.count(*it) == 1)
+            {return *it;}
+        }
+        
+        return nums[0];
+        
+    }
+};
+
+
+
+
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        
+        unordered_set<int>hashset;//intialize the hash set
+        for(int i =0 ; i < nums.size(); i++)
+        {
+            hashset.insert(nums[i]);
+        }
+        
+        for(auto it = hashset.begin(); it != hashset.end(); ++it)
+        {
+            if(hashset.count(*it) != 1)
+            {return true;}
+        }
+        
+        return false;
+    }
+};
